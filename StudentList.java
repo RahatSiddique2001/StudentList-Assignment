@@ -6,6 +6,7 @@ public class StudentList {
 	public static void main(String[] args) {
 		if(args.length  != 1){
 			System.err.println(conts.invalid);
+			System.err.println(conts.message);
 			System.err.println(conts.exit);
 			System.exit(1);
 		}
