@@ -6,6 +6,7 @@ public class Constant {
     public  static  String dd = "dd/mm/yyyy-hh:mm:ss a";
     public  static  String found = "We found it!";
     public  static  String invalid = "Invalid arguments.";
+    public  static  String message = "Try using :\n StudentList a \n  StudentList c \n StudentList r \n";
     public  static  String exit = "Exiting program";
     public  static  String lastUpdate = "\nList last updated on ";
     public  static  String word = " word(s) found ";
