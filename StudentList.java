@@ -5,13 +5,13 @@ import java.util.*;
 
 public class StudentList {
     public static void main(String[] args) {
-        if (args.length != 1) {
+        if (args.length != 1) {                 // handle invalid number of arguments.
             System.err.println(Constant.invalid);
             System.err.println(Constant.message);
             System.err.println(Constant.exit);
             System.exit(1);
         }
-        if (args[0].equals(Constant.print)) {
+        if (args[0].equals(Constant.print)) {   // case: print all
             System.out.println(Constant.load);
             try {
                 for (String student : readFile().readLine().split(Constant.comma)) {
@@ -20,16 +20,15 @@ public class StudentList {
             } catch (Exception e) {
             }
             System.out.println(Constant.loaded);
-        } else if (args[0].equals(Constant.random)) {
+        } else if (args[0].equals(Constant.random)) {   // case: print random data
             System.out.println(Constant.load);
             try {
                 String nameOfStudents[] = readFile().readLine().split(Constant.comma);
-                int randomnameOfStudents = new Random().nextInt(nameOfStudents.length);
-                System.out.println(nameOfStudents[randomnameOfStudents]);
+                System.out.println(nameOfStudents[new Random().nextInt(nameOfStudents.length)]);
             } catch (Exception e) {
             }
             System.out.println(Constant.loaded);
-        } else if (args[0].contains(Constant.add)) {
+        } else if (args[0].contains(Constant.add)) {    // case: add new data
             System.out.println(Constant.load);
             try {
                 BufferedWriter bufferedWriter = writeFile();
@@ -40,7 +39,7 @@ public class StudentList {
             } catch (Exception e) {
             }
             System.out.println(Constant.loaded);
-        } else if (args[0].contains(Constant.search)) {
+        } else if (args[0].contains(Constant.search)) {     // case: search data
             System.out.println(Constant.load);
             try {
                 String nameOfStudents[] = readFile().readLine().split(Constant.comma);
@@ -56,14 +55,14 @@ public class StudentList {
             } catch (Exception e) {
             }
             System.out.println(Constant.loaded);
-        } else if (args[0].contains(Constant.count)) {
+        } else if (args[0].contains(Constant.count)) {      // case: count data
             System.out.println(Constant.load);
             try {
                 System.out.println(readFile().readLine().split(Constant.comma).length + Constant.word);
             } catch (Exception e) {
             }
             System.out.println(Constant.loaded);
-        } else {
+        } else {                // handle invalid arguments.
             System.err.println(Constant.invalid);
             System.err.println(Constant.exit);
             System.exit(2);
